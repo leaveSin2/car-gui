@@ -101,7 +101,7 @@ class MainWindow(QMainWindow):
       n = len(cars)
       self.tb_car.setRowCount(n)
       row = 0
-      for car in cars: #car => (1, 'Toyota', 'Yaris Cross', 2025, 9999999)
+      for car in cars: 
         self.tb_car.setItem(row, 0, QTableWidgetItem(str(car[0])))
         self.tb_car.setItem(row, 1, QTableWidgetItem(car[1]))
         self.tb_car.setItem(row, 2, QTableWidgetItem(car[2]))
