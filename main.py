@@ -62,8 +62,7 @@ class MainWindow(QMainWindow):
                               'Unable to delete car!')
       self.clear()
 
-  def selected_row(self, row, column): # เพิ่ม parameter row, column
-    # ใช้ row ที่ส่งมาจากตอนคลิกแทนการนับ rowCount
+  def selected_row(self, row, column):
     item_id = self.tb_car.item(row, 0)
     
     if item_id is not None:
