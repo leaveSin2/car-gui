@@ -152,6 +152,7 @@ class MainWindow(QMainWindow):
 
     self.show_all_cars()
   
+  
 if __name__ == '__main__':
   app = QApplication(sys.argv)
   window = MainWindow()
