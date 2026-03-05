@@ -62,22 +62,25 @@ class MainWindow(QMainWindow):
                               'Unable to delete car!')
       self.clear()
 
-  def selected_row(self):
-    row = self.tb_car.rowCount()
-    self.id = self.tb_car.item(row, 0).text()
-    self.txt_brand.setText(self.tb_car.item(row, 1).text())
-    self.txt_model.setText(self.tb_car.item(row, 2).text())
-    self.txt_year.setText(self.tb_car.item(row, 3).text())
-    self.txt_price.setText(self.tb_car.item(row, 4).text())
+  def selected_row(self, row, column): # เพิ่ม parameter row, column
+    # ใช้ row ที่ส่งมาจากตอนคลิกแทนการนับ rowCount
+    item_id = self.tb_car.item(row, 0)
+    
+    if item_id is not None:
+        self.id = item_id.text()
+        self.txt_brand.setText(self.tb_car.item(row, 1).text())
+        self.txt_model.setText(self.tb_car.item(row, 2).text())
+        self.txt_year.setText(self.tb_car.item(row, 3).text())
+        self.txt_price.setText(self.tb_car.item(row, 4).text())
 
-    self.btn_update.setEnabled(True)
-    self.btn_delete.setEnabled(True)
-    self.btn_add.setEnabled(False)
-    self.btn_clear.setEnabled(True)
+        self.btn_update.setEnabled(True)
+        self.btn_delete.setEnabled(True)
+        self.btn_add.setEnabled(False)
+        self.btn_clear.setEnabled(True)
 
-    self.txt_brand.setEnabled(False)
-    self.txt_model.setEnabled(False)
-    self.txt_year.setEnabled(False)
+        self.txt_brand.setEnabled(False)
+        self.txt_model.setEnabled(False)
+        self.txt_year.setEnabled(False)
 
   def search_car(self):
     brand = self.txt_brand.text()
